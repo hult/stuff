@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Copies a program compiled with mosync into the proper place in the
+# iOS runtime of a mosync directory. You only specify your mosync app
+# root and your mosync source root.
+#
+# Example:
+# cp-ios src/myapp src/MoSync
+
+source=$1
+mosync=$2
+
+cp ${source}/Output/Release/{data_section.bin,program,resources} ${mosync}/runtimes/cpp/platforms/iphone
+
+cp ${source}/Output/Release/rebuild.build.cpp ${mosync}/runtimes/cpp/platforms/iphone/Classes
