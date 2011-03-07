@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Copies a program compiled with mosync into the proper place in the
+# android runtime of a mosync directory. You only specify your mosync app
+# root and your mosync source root.
+#
+# Example:
+# cp-android src/myapp src/MoSync
+
+source=$1
+mosync=$2
+
+cp ${source}/Output/Release/program ${mosync}/runtimes/java/platforms/androidJNI/AndroidProject/assets/program.mp3
+cp ${source}/Output/Release/resources ${mosync}/runtimes/java/platforms/androidJNI/AndroidProject/assets/resources.mp3
